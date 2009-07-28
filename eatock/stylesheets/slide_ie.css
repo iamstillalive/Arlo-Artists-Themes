@@ -1,0 +1,7 @@
+html { overflow: hidden; }
+body { height: 100%; overflow: auto; }
+#menu { float: left; width: 200px; overflow: auto; top: 0; bottom: 0; position: fixed; height: 100%;}
+#contents { height: 100%; top: 0; bottom: 0; left:0; padding:0 0 0 200px; position: fixed; height: 100%; }
+* html div#menu { width: 200px; }
+* html div#contents { height: 100%; width: 80%; overflow: auto; position: absolute; margin: 0; }
+img.png { background-image: expression( this.runtimeStyle.backgroundImage = "none", this.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + this.src + "', sizingMethod='image')", this.src = "/path/to/transparent.gif" ); }

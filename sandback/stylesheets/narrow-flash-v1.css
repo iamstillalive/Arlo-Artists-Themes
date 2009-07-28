@@ -1,0 +1,94 @@
+/* 
+Arlo/Artists: Sandback - Narrow Flash theme v1 (Narrow Width, Flash gallery, Single-image homepage)
+Designed by Dylan Fareed (http://dylanfareed.com) Copyright 2009
+ */
+
+/* positioning */
+#sandback {width:746px;padding:0;margin:10px auto;}
+#sandback-top {height:20px;}
+#sandback-middle {padding:20px 0;}
+#sandback-bottom {height:20px;}
+.upper-border {margin:20px 0;height:1px;}
+.lower-border {margin:0px 0 20px 0;height:1px;}
+
+#hd, #bd, #ft {}
+#bd {padding:0 0 0 0;}
+#nav {}
+#content {min-height:500px;}
+#ft {}
+.arlo-clear {clear:both;margin:0;padding:0;}
+
+/* #hd */
+#hd {padding:0 48px 0 48px;}
+#hd h1 {font-size:32px;line-height:40px;font-weight:normal;padding:0;margin:0;}
+#hd h1 a {text-decoration:none;}
+#hd h1 a:hover {text-decoration:underline;}
+
+#name {padding: 0;text-align:center;}
+#nav {padding:0 0 0 0;font-size:13px;line-height:20px;text-align:center;}
+#nav a {text-decoration:none;margin:0 10px 0 0;}
+#nav a:hover {text-decoration:underline;}
+
+/* #bd */
+#content {padding:0 48px 0 48px;}
+#content h2 {margin:0 0 20px 0;font-size:24px;line-height:24px;font-weight:normal;}
+#bd h2 a {text-decoration:none;}
+#bd h2 a:hover {text-decoration:underline;}
+#content h3 {margin:0 0 20px 0;font-size:13px;line-height:20px;font-weight:bold;}
+#content h3.indented {margin:0 0 20px 80px;font-size:13px;line-height:20px;font-weight:bold;}
+#content ul,
+#content p {margin:0 0 20px 0;font-size:13px;line-height:20px;}
+#content li {margin:0 0 0 0;font-size:13px;line-height:20px;}
+#content a {text-decoration:underline;}
+#content a:hover {text-decoration:none;}
+
+/* #ft */
+#ft {margin:10px 0 0 0;padding:0 48px 0 48px;}
+#ft p {font-size:11px;line-height:20px;margin:0;text-align:left;}
+#ft a {text-decoration:none;}
+#ft a:hover {text-decoration:underline;}
+
+/* pages */
+#bd #pages-container {margin:40px auto 0 auto;width:540px;}
+#bd #pages-container h2 {}
+
+/* resume */
+#bd #resume-container {margin:40px auto 0 auto;width:540px;}
+#bd #resume-copy {}
+#bd #resume-copy p {padding:0;margin:0px 0 20px 0;font-style:oblique;font-size:13px;line-height:18px;}
+#bd .resume-section-row {margin:0 0 40px 0;}
+#bd .resume-section-row h3 {margin:0;font-weight:bold;font-size:14px;}
+#bd .resume-item-title p {font-size:13px;line-height:20px;margin:0 0 20px 0;font-weight:bold;}
+#bd .resume-item-title p span.resume-item-when {font-weight:normal;font-style:oblique;}
+#bd .resume-item-description p {font-size:13px;line-height:20px;margin:-20px 0 20px 0;}
+#bd #resume-pdf-link {float:right;text-align:right;font-size:13px;line-height:20px;}
+#bd #resume-pdf-link a {padding:0;font-size:13px;line-height:24px;text-decoration:underline;}
+#bd #resume-pdf-link a:hover {text-decoration:none;}
+
+/* notes */
+#bd #notes-container {margin:40px auto 0 auto;width:540px;}
+#content #notes-content {}
+#content #notes-footer {margin:0;padding:0;}
+.note {margin:0 0 40px 0;}
+#bd #content .note-metadata p {margin:-10px 0 40px 0;font-size:11px;}
+#bd h2 span.finding-link {font-size:11px;margin:0 0 0 5px;padding:0 0 0 0px;font-weight:normal;}
+
+#bd #content #notes-footer p {font-size:12px;}
+#bd #content #notes-footer ul {font-weight:bold;margin:0 0 20px 0;font-size:11px;line-height:20px;}
+#bd #content #notes-footer li {font-weight:normal;margin:2px 0 2px 0;font-size:11px;line-height:16px;}
+#bd #content #notes-footer li a {display:block;padding:4px;text-decoration:none;}
+#bd #content #notes-footer li a:hover {text-decoration:underline;}
+#bd #content #notes-footer p.notes-rss {font-size:11px;line-height:20px;margin:0 0 0 0;list-style-type:circle;font-weight:normal;}
+#bd #content #notes-footer p.notes-rss a {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+#bd #content #notes-footer p.notes-rss a:hover {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+
+/* misc */
+#homepage-image {margin:0 0 20px 0;text-align:center;}
+
+/* portfolios */
+#bd #portfolios-container h2 {text-align:center;}
+#bd .portfolios-wrap ul {}
+#bd .portfolios-wrap li {float:left;margin:0 20px 20px 0;}
+#bd .portfolios-wrap p {margin:0px 0 0 0;}
+#bd .portfolios-wrap a {text-decoration:underline;}
+#bd .portfolios-wrap a:hover {text-decoration:none;}

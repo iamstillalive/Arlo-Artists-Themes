@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	
+	<meta name="color:site background" content="EEEEEE" />
+	<meta name="color:site top border" content="81B400" />
+	<meta name="color:content background" content="FFFFFF" />
+	<meta name="color:site title color" content="81B400" />
+	<meta name="color:thin border" content="eeeeee" />
+	<meta name="color:navigation link color" content="5E5E5E" />
+	<meta name="color:current navigation link color" content="000000" />
+	<meta name="color:headers color" content="222222" />
+	<meta name="color:body text color" content="444444" />
+	<meta name="color:body text link color" content="000000" />
+	<meta name="color:image links border" content="eeeeee" />
+	<meta name="color:image links border hover" content="000000" />
+	<meta name="color:sidebar text color" content="aaaaaa" />
+	<meta name="color:sidebar text link color" content="aaaaaa" />
+	<meta name="color:footer text color" content="999999" />
+	<meta name="color:footer text link color" content="777777" />
+	
+	<meta name="font:site title" content="1" />
+	<meta name="font:navigation links" content="1" />
+	<meta name="font:headers" content="1" />
+	<meta name="font:body text" content="2" />
+	<meta name="font:footer text" content="1" />
+	
+	<title>{{ site.name }}</title>
+	{{ site | meta_description }}
+	{{ site | meta_keywords }}
+	{{ site | head_blog_rss_feed_link }}
+	{{ site | head_portfolios_rss_feed_link }}	
+	{{ site | reset_stylesheets }}
+	<link href="http://assets.arlosites.com/artists/themes/neel/stylesheets/regular-cycle-v1.css" media="screen" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://assets.arlosites.com/shared/js/jquery-1.3.1.min.js"></script>
+	<script type="text/javascript" src="http://assets.arlosites.com/shared/js/jquery.cycle.lite.js"></script>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#portfolio-cycle-stills').cycle({ 
+			    prev:   '.prev', 
+			    next:   '.next', 
+			    timeout: 0,
+			    speed: 400
+			});
+		});
+	</script>
+	
+	<style type="text/css">
+		body, html {background-color:#{arlo color:site background};}
+		html {border-top:8px solid #{arlo color:site top border};}
+		#neel {background-color:#{arlo color:content background};}
+		#nav, #content {border-top:1px solid #{arlo color:thin border};}
+		
+		#hd h1 a {color:#{arlo color:site title color};font-family:{arlo font:site title};}
+		#hd h1 a:hover {}
+		
+		#nav li a {color:#{arlo color:navigation link color};font-family:{arlo font:navigation links};}
+		#nav li a.active-parent,
+		#nav li a.active {color:#{arlo color:current navigation link color};font-family:{arlo font:navigation links};}
+		#nav li a:hover {}
+		
+		#bd #content h2,
+		#bd #content h3 {color:#{arlo color:headers color};font-family:{arlo font:headers};}
+		#bd #content h2 a,
+		#bd #content h3 a {color:#{arlo color:headers color};}
+		#bd #content h2 a:hover,
+		#bd #content h3 a:hover {color:#{arlo color:headers color};}
+		#bd #content p.metadata,
+		#bd #content p,
+		#lightview p,
+		#bd #content ul,
+		#bd #content li,
+		#resume-pdf-link,
+		#bd blockquote {color:#{arlo color:body text color};font-family:{arlo font:body text};}
+			
+		#bd #content a {color:#{arlo color:body text link color};}
+		#bd #content a:hover {}
+
+		#bd #content a img {border:4px solid #{arlo color:image links border};}
+		#bd #content a:hover img {border:4px solid #{arlo color:image links border hover};}
+
+		.note {border-bottom:1px solid #{arlo color:thin border};}
+		
+		#bd #content .content-sidebar p,
+		#bd #content .content-sidebar ul,
+		#bd #content .content-sidebar li,
+		#bd #content #notes-sidebar p,
+		#bd #content #notes-sidebar ul {color:#{arlo color:sidebar text color};font-family:{arlo font:body text};}
+		#bd #content #notes-sidebar li {color:#{arlo color:sidebar text color};font-family:{arlo font:body text};border-bottom:1px solid #{arlo color:thin border};}
+		#bd #content .content-sidebar a,
+		#bd #content #notes-sidebar a,
+		#bd #content #notes-sidebar li a {color:#{arlo color:sidebar text link color};}
+		
+		#bd #sidebar p,
+		#bd #sidebar ul,
+		#bd #sidebar li {color:#{arlo color:sidebar text color};font-family:{arlo font:body text};}
+		#bd #sidebar p a,
+		#bd #sidebar ul a,
+		#bd #sidebar li a {color:#{arlo color:sidebar text link color};}
+		
+		#ft p {color:#{arlo color:footer text color};font-family:{arlo font:footer text};}
+		#ft a {color:#{arlo color:footer text link color};}
+	</style>
+	
+</head>
+
+<body>
+<div id="neel">
+	<div id="hd">
+		<h1>{{ site | masthead_image_or_title_link }}</h1>
+ 	</div><!-- end hd -->
+	<div id="bd">
+		<div id="nav"> 
+			{{ site | aware_list_menu: section, action, current_page, 'true', 'true' }}
+		</div><!-- end nav -->	
+		<div id="content">	
+			{% if section == 'portfolios' %}
+				<div id="portfolios-container">
+				{% if action == 'show' %}
+					<h2>{{ portfolio.name }}</h2>
+					{% if portfolio.body != blank %}<div class="portfolio-copy">{{ portfolio.body | textilize_and_parse_liquid }}</div>{% endif %}
+
+					<div id="portfolio-cycle">
+						<p class="portfolio-cycle-nav"><a class="prev" href="#">Prev</a> / <a class="next" href="#">Next</a> <span style="font-weight: normal; margin-left: 6px;">(<span id="num"></span>)</span></p>
+						<div id="portfolio-cycle-stills">
+						{% for still in portfolio.stills %}
+						<div class="cycled-still">
+							{{ still | to_image_tag: 'six_fifty' }}
+							{% if still.formatted_meta_data != blank %}<p>{{ still.formatted_meta_data }}</p>{% endif %}
+							{{ still.body | textilize_and_parse_liquid }}	
+						</div>
+						{% endfor %}
+						</div><!-- end portfolio-cycle-stills -->
+					</div><!-- end portfolio-cycle -->
+					
+				{% elsif action == 'index' %}
+						<h2>{{ site | portfolio_section_name }}</h2>
+						{% if site.portfolios_copy != blank %}<div class="portfolios-copy">{{ site.portfolios_copy | textilize_and_parse_liquid }}</div>{% endif %}
+						<div class="portfolios-wrap">
+							<ul>
+							{% for portfolio in portfolios %}
+							<li><a href='{{ portfolio | permalink_for }}' title="{{ portfolio.name }}">{{ portfolio.stills.first | to_image_tag: 'medium' }}</a><p>{{ portfolio | link_for: portfolio.name }}</p></li>
+							{% endfor %}
+								<div class="arlo-clear"></div>
+							</ul>
+						</div><!-- end portfolios-wrap -->
+				{% endif %}		
+				</div><!-- end portfolios-container -->
+			{% elsif section == 'pages' %}
+				<div id="pages-container">
+				{% if action == 'show' %}
+					<h2>{{ page.name }}</h2>
+					{{ page.body | textilize_and_parse_liquid }}
+					{{ page.extended | textilize_and_parse_liquid }}
+				{% elsif action == 'index' %}
+					<h2>{{ site | pages_section_name }}</h2>
+					{{ site.pages_copy | textilize_and_parse_liquid }}
+					<ul>
+					{% for page in pages %}
+						<li>{{ page | link_for: page.name }}</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+				</div><!-- end pages-container -->
+			{% elsif section == 'resume' %}
+				<div id="resume-container">
+				<div id="resume-pdf-link"><a href="{{ site | resume_pdf_url }}">Download PDF</a></div>
+				
+				<h2>{{ site | resume_section_name }}</h2>
+				{% if site.resume_copy != blank %}<div id="resume-copy">{{ site.resume_copy | textilize_and_parse_liquid }}</div>{% endif %}
+				
+				{% for resume_section in resume_sections %}
+					<div class="resume-section-row">
+						<h3>{{ resume_section.name }}</h3>
+						{% if resume_section.body != blank %}<div class="resume-copy">{{ resume_section.body | textilize_and_parse_liquid }}</div>{% endif %}
+						
+						{% for resume_item in resume_section.resume_items %}
+						<div class="resume-item">
+							<div class="resume-item-title"><p>{% if resume_item.website_url == empty %}{{ resume_item.name }}{% else %}{{ resume_item.website_url | link_to_url: resume_item.name }}{% endif %}{% if resume_item.when != blank %} <span class="resume-item-when">{{ resume_item.when }}</span>{% endif %}</p></div>
+							
+							{% if resume_item.body != blank %}<div class="resume-item-description"><p>{{ resume_item.body }}</p></div>{% endif %}
+						</div><!-- end resume-item -->
+						{% endfor %}
+					</div><!-- end resume-section-row -->
+				{% endfor %}
+				<div class="arlo-clear"></div>
+				</div><!-- end resume-container -->
+			{% elsif section == 'notes' %}
+				<div id="notes-container">
+				{% if action == 'show' %}
+				<div id="notes-content-sidebar-wrap">
+					<div id="notes-content">
+							<div class="note">
+								<h2>{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">-> {{ note | link_for_finding }}</span>{% endif %}</h2>
+									{% if note.stills != empty %}
+									<div class="note-stills">
+										{% for still in note.stills %}
+										<div class="note-still">
+											{{ still | to_image_tag: 'five_fourty' }}
+											<p>{{ still.name }}</p>
+										</div><!-- end note-still -->
+										{% endfor %}
+										<div class="arlo-clear"></div>
+									</div><!-- end note-stills -->
+									{% endif %}
+									{% if note.body != blank %}<div class="note-body">{{ note.body | textilize_and_parse_liquid }}</div>{% endif %}
+									<div class="note-metadata"><p class="metadata">{{ note | link_for: "Permalink" }} | {{ note.created_at | to_formatted_date }}</p></div>
+							</div><!-- end note -->
+					</div><!-- end notes-content -->
+					<div id="notes-sidebar">
+						{{ site.notes_copy | textilize_and_parse_liquid }}{{ note | next_note }}{{ note | previous_note }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}
+					</div><!-- end notes-sidebar -->
+					<div class="arlo-clear"></div>
+				</div><!-- end notes-content-sidebar-wrap -->
+				{% elsif action == 'index' %}
+				<div id="notes-content-sidebar-wrap">
+					<div id="notes-content">
+					{% for note in notes %}
+						<div class="note">
+							<h2>{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">-> {{ note | link_for_finding }}</span>{% endif %}</h2>
+								{% if note.stills != empty %}
+								<div class="note-stills">
+									{% for still in note.stills %}
+									<div class="note-still">
+										{{ still | to_image_tag: 'five_fourty' }}
+										<p>{{ still.name }}</p>
+									</div><!-- end note-still -->
+									{% endfor %}
+									<div class="arlo-clear"></div>
+								</div><!-- end note-stills -->
+								{% endif %}
+								{% if note.body != blank %}<div class="note-body">{{ note.body | textilize_and_parse_liquid }}</div>{% endif %}
+								<div class="note-metadata"><p class="metadata">{{ note | link_for: "Permalink" }} | {{ note.created_at | to_formatted_date }}</p></div>
+						</div><!-- end note -->
+					{% endfor %}
+						{{ notes | note_pagination: page }}
+					</div><!-- end notes-content -->
+					<div id="notes-sidebar">
+						{{ site.notes_copy | textilize_and_parse_liquid }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}
+					</div><!-- end notes-sidebar -->
+					<div class="arlo-clear"></div>
+				</div><!-- end notes-content-sidebar-wrap -->
+				{% elsif action == 'type' %}
+				<div id="notes-content-sidebar-wrap">
+					<div id="notes-content">
+					{% for note in notes %}
+						<div class="note">
+							<h2>{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">-> {{ note | link_for_finding }}</span>{% endif %}</h2>
+								{% if note.stills != empty %}
+								<div class="note-stills">
+									{% for still in note.stills %}
+									<div class="note-still">
+										{{ still | to_image_tag: 'five_fourty' }}
+										<p>{{ still.name }}</p>
+									</div><!-- end note-still -->
+									{% endfor %}
+									<div class="arlo-clear"></div>
+								</div><!-- end note-stills -->
+								{% endif %}
+								{% if note.body != blank %}<div class="note-body">{{ note.body | textilize_and_parse_liquid }}</div>{% endif %}
+								<div class="note-metadata"><p class="metadata">{{ note | link_for: "Permalink" }} | {{ note.created_at | to_formatted_date }}</p></div>
+						</div><!-- end note -->
+					{% endfor %}
+						{{ notes | note_pagination: page }}
+					</div><!-- end notes-content -->
+					<div id="notes-sidebar">
+						{{ site.notes_copy | textilize_and_parse_liquid }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}
+					</div><!-- end notes-sidebar -->
+					<div class="arlo-clear"></div>
+				</div><!-- end notes-content-sidebar-wrap -->
+				{% endif %}
+				</div><!-- end notes-container -->
+			{% else %}	
+			<div id="home-container">
+			<div id="homepage-image"><a href="{{ site.public_parent_portfolios.first | permalink_for }}">{{ site.public_parent_portfolios.first.stills.first | to_image_tag: 'six_fifty' }}</a></div>
+			{{ site.homepage_copy | textilize_and_parse_liquid }}
+			</div><!-- end home-container -->
+			{% endif %}
+		</div><!-- end content -->
+		<div class="arlo-clear"></div>
+ 	</div><!-- end bd -->
+	
+	<div class="arlo-clear"></div>
+	<div id="ft">
+		{{ site.footer_copy | textilize_and_parse_liquid }}
+		{{ site | arlo_credit }}
+	</div>
+</div><!-- end neel -->
+{{ site | google_analytics_code }}
+
+<!--
+Arlo/Artists: Neel - Regular Cycle theme v1 (Regular Width, jquery cycle gallery, Single-image homepage)
+Designed by Dylan Fareed (http://dylanfareed.com) ©2009
+_____________|\|\|\|\_____________|\|\|\|\|\|\|\|\|\____|\|\____________________|\|\|\|\|\|\|\|\____
+____________|\|\|\|\|\____________|\|\|\|\|\|\|\|\|\|\__|\|\__________________|\|\|\|\|\|\|\|\|\|\__
+___________|\|\____|\|\___________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+__________|\|\______|\|\__________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+_________|\|\________|\|\_________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+________|\|\__________|\|\________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+_______|\|\|\|\|\|\|\|\|\|\_______|\|\|\|\|\|\|\|\|\|\__|\|\__________________|\|\____________|\|\__
+______|\|\|\|\|\|\|\|\|\|\|\______|\|\|\|\|\|\|\|\|\____|\|\__________________|\|\____________|\|\__
+_____|\|\________________|\|\_____|\|\________|\|\______|\|\__________________|\|\____________|\|\__
+____|\|\__________________|\|\____|\|\_________|\|\_____|\|\__________________|\|\____________|\|\__
+___|\|\____________________|\|\___|\|\__________|\|\____|\|\|\|\|\|\|\|\|\|\__|\|\|\|\|\|\|\|\|\|\__
+__|\|\______________________|\|\__|\|\___________|\|\___|\|\|\|\|\|\|\|\|\|\____|\|\|\|\|\|\|\|\____
+-->
+
+</body>
+</html>

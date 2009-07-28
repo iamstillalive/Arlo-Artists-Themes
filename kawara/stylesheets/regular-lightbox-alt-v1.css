@@ -1,0 +1,103 @@
+/* 
+Arlo/Artists: Kawara - Regular Lightbox theme v1 (Regular Width, Lightbox gallery, Single-image homepage)
+Designed by Dylan Fareed (http://dylanfareed.com) ©2009
+ */
+
+/* positioning */
+#kawara {width:880px;padding:0;margin:10px auto;}
+#hd, #bd, #ft {}
+#bd {padding:0 0 0 0;}
+#nav {}
+#content {min-height:500px;}
+#content .content-main {float:left;width:670px;}
+#content .content-sidebar {float:right;width:130px;padding:40px 0 0 0;}
+#ft {}
+.arlo-clear {clear:both;margin:0;padding:0;}
+
+/* #hd */
+#hd {padding:40px 40px 0 40px;}
+#hd h1 {font-size:20px;line-height:20px;font-weight:normal;padding:0 0 0 0;}
+#hd h1 a {text-decoration:none;}
+#hd h1 a:hover {text-decoration:underline;}
+
+#name {padding: 0;text-align:left;float:left;}
+#nav {padding:0 0 0 0;font-size:13px;line-height:20px;text-align:right;float:right;}
+/*
+#nav {padding:0 0 0 20px;font-size:13px;line-height:20px;text-align:left;}
+*/
+#nav a {text-decoration:none;margin:0 5px 0 0;}
+#nav a:hover {text-decoration:underline;}
+
+/* #bd */
+#content {padding:40px 40px 20px 40px;}
+
+#content h2 {margin:0 0 20px 0;font-size:24px;line-height:24px;font-weight:normal;}
+#bd h2 a {text-decoration:none;}
+#bd h2 a:hover {text-decoration:underline;}
+#content h3 {margin:0 0 20px 0;font-size:13px;line-height:20px;font-weight:bold;}
+#content h3.indented {margin:0 0 20px 80px;font-size:13px;line-height:20px;font-weight:bold;}
+#content ul,
+#content p {margin:0 0 20px 0;font-size:13px;line-height:20px;}
+#content li {margin:0 0 0 0;font-size:13px;line-height:20px;}
+#content a {text-decoration:underline;}
+#content a:hover {text-decoration:none;}
+
+/* #ft */
+#ft {margin:10px 0 0 0;padding:0 0 0 40px;}
+#ft p {font-size:11px;line-height:20px;margin:0;text-align:left;}
+#ft a {text-decoration:none;}
+#ft a:hover {text-decoration:underline;}
+
+/* resume */
+#bd #resume-copy {}
+#bd #resume-copy p {padding:0;margin:0px 0 20px 0;font-style:oblique;font-size:13px;line-height:18px;}
+#bd .resume-section-row {margin:0 0 40px 0;}
+#bd .resume-section-row h3 {margin:0;font-weight:bold;font-size:14px;}
+#bd .resume-item-title p {font-size:13px;line-height:20px;margin:0 0 20px 0;font-weight:bold;}
+#bd .resume-item-title p span.resume-item-when {font-weight:normal;font-style:oblique;}
+#bd .resume-item-description p {font-size:13px;line-height:20px;margin:-20px 0 20px 0;}
+#bd #resume-pdf-link {float:right;text-align:right;font-size:13px;line-height:20px;}
+#bd #resume-pdf-link a {padding:0;font-size:13px;line-height:24px;text-decoration:underline;}
+#bd #resume-pdf-link a:hover {text-decoration:none;}
+
+/* notes */
+#content #notes-content {float:left;width:580px;}
+#content #notes-sidebar {float:right;width:180px;padding:44px 0 0 0;}
+.note {margin:0 0 40px 0;}
+#bd #content .note-metadata p {margin:-10px 0 40px 0;}
+#bd h2 span.finding-link {font-size:11px;margin:0 0 0 5px;padding:0 0 0 0px;font-weight:normal;}
+#bd #content #notes-sidebar ul {font-weight:bold;margin:0 0 20px 0;font-size:11px;line-height:20px;}
+#bd #content #notes-sidebar li {font-weight:normal;margin:2px 0 2px 0;font-size:11px;line-height:16px;}
+#bd #content #notes-sidebar li a {display:block;padding:4px;text-decoration:none;}
+#bd #content #notes-sidebar li a:hover {text-decoration:underline;}
+#bd #content #notes-sidebar p.notes-rss {font-size:11px;line-height:20px;margin:0 0 0 0;list-style-type:circle;font-weight:normal;}
+#bd #content #notes-sidebar p.notes-rss a {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+#bd #content #notes-sidebar p.notes-rss a:hover {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+
+/* misc */
+#homepage-image {margin:0 0 20px 0;}
+
+/* portfolios */
+#bd .portfolio-stills-wrap {}
+#bd .portfolio-copy {}
+#bd .portfolio-copy-with-images {float:right;width:200px;}
+#bd .portfolio-stills-wrap-with-description {float:left;width:600px;}
+#bd .portfolios-wrap ul {}
+#bd .portfolios-wrap li {float:left;margin:0 20px 20px 0;}
+#bd .portfolios-wrap p {margin:5px 0 0 0;}
+#bd .portfolios-wrap a {text-decoration:underline;}
+#bd .portfolios-wrap a:hover {text-decoration:none;}
+#bd .portfolio-stills-wrap ul,
+#bd .portfolio-stills-wrap-with-description ul {}
+#bd .portfolio-stills-wrap li,
+#bd .portfolio-stills-wrap-with-description li {float:left;margin:0 20px 20px 0;}
+#bd .portfolio-stills-wrap a,
+#bd .portfolio-stills-wrap-with-description a {text-decoration:underline;}
+#bd .portfolio-stills-wrap a:hover,
+#bd .portfolio-stills-wrap-with-description a:hover {text-decoration:none;}
+
+#lightview p {margin:20px 0 0 0;padding:0;font-size:12px;line-height:20px;}
+#lightview p a {text-decoration:underline;}
+#lightview p a:hover {text-decoration:none;}
+#lightview p span.still-name {font-weight:bold;}
+.lightview-image {text-align:center;}

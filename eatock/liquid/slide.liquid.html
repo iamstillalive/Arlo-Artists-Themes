@@ -1,0 +1,364 @@
+<!-- Arlo/Artists: Eatock - Horizontal theme v1.00 (Wide, Left-aligned 2-column layout, horizontal sliding gallery, Single-image homepage) -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+<title>{{ site.name }}</title>
+{{ site | meta_description }}
+{{ site | meta_keywords }}
+
+<meta name="color:menu background" content="FFFFFF" />
+<meta name="color:content background" content="eeeeee" />
+<meta name="color:site title color" content="000000" />
+<meta name="color:navigation link color" content="999999" />
+<meta name="color:header color" content="000000" />
+<meta name="color:body text color" content="444444" />
+<meta name="color:body text link color" content="000000" />
+<meta name="color:sidebar text color" content="777777" />
+<meta name="color:sidebar text link color" content="444444" />
+<meta name="color:footer text color" content="aaaaaa" />
+<meta name="color:footer text link color" content="999999" />
+<meta name="font:site title" content="1" />
+<meta name="font:navigation links" content="1" />
+<meta name="font:headers" content="1" />
+<meta name="font:body text" content="2" />
+<meta name="font:footer text" content="1" />
+<meta name="color:image link border" content="ffffff" />
+<meta name="color:image link border hover" content="000000" />
+
+{{ site | head_blog_rss_feed_link }}
+{{ site | head_portfolios_rss_feed_link }}
+{{ site | head_reset_stylesheets }}
+<link href="http://assets.arlosites.com/artists/themes/eatock/slide/slide.css" media="screen" rel="stylesheet" type="text/css" />
+
+<script src="http://assets.arlosites.com/shared/js/mootools-1.2.3-core-yc.js" type="text/javascript" ></script>
+<script src="http://assets.arlosites.com/shared/js/mootools-1.2.3.1-more.js" type="text/javascript" ></script>
+<script src="http://assets.arlosites.com/shared/js/date_format.mootools.js" type="text/javascript"></script>
+
+<script type="text/javascript" language="javascript">
+	window.addEvent('domready', function(){ 
+		var mySmoothScroll = new Fx.SmoothScroll({
+		    wheelStops: false,
+			duration: 900,
+			offset: {'x': -205, 'y': 0} 
+		})
+		var date = new Date();
+  		var offset = date.getTimezoneOffset();
+		Cookie.write('tzoffset', offset);
+		DateFormat.autoParse();
+	});	
+</script>
+
+<style type="text/css">
+	/* colors */
+	body, html {background-color:#{arlo color:content background};}
+	#name, #nav {}
+	#menu {background-color:#{arlo color:menu background};}
+	#content, #sidebar, #ft #footer {}
+	#nav li a {color:#{arlo color:navigation link color};font-family:{arlo font:navigation links};}
+	#nav li a:hover {}
+	#name h1 a {color:#{arlo color:site title color};font-family:{arlo font:site title};}
+	#name h1 a:hover {}
+
+	h2,
+	#portfolio-container h2,
+	#contents h2,
+	#contents h3 {color:#{arlo color:header color};font-family:{arlo font:headers};}
+	#contents h2 a,
+	#contents h3 a {color:#{arlo color:header color};}
+	#contents h2 a:hover,
+	#contents h3 a:hover {color:#{arlo color:header color};}
+	
+	p,
+	#portfolio-container p,
+	#contents p.metadata,
+	#contents p,
+	#contents ul,
+	#contents li,
+	#contents .content-main p,
+	#contents .content-main ul,
+	#contents .content-main li,
+	#contents #resume-pdf-link {color:#{arlo color:body text color};font-family:{arlo font:body text};}
+	#portfolio-container a,
+	#contents a,
+	#contents .content-main a {color:#{arlo color:body text link color};}
+	#portfolio-container a:hover,
+	#contents a:hover,
+	#contents .content-main a:hover {}
+	
+	#portfolio-container a img,
+	#contents a img {border:4px solid #{arlo color:image link border};}
+	#portfolio-container a:hover img,
+	#contents a:hover img {border:4px solid #{arlo color:image link border hover};}
+	#contents h2.indented span.finding-link {}
+	
+	
+	#contents blockquote {border-left:2px solid #{arlo color:thin border};font-family:{arlo font:body text};}
+	
+	#contents .content-sidebar p,
+	#contents .content-sidebar ul,
+	#contents .content-sidebar li {color:#{arlo color:sidebar text color};font-family:{arlo font:body text};}
+	#contents .content-sidebar p a {color:#{arlo color:sidebar text link color};}
+
+	#contents #sidebar p,
+	#contents #sidebar ul,
+	#contents #sidebar li {color:#{arlo color:sidebar text color};font-family:{arlo font:body text};}
+	#contents #sidebar p a,
+	#contents #sidebar ul a,
+	#contents #sidebar li a {color:#{arlo color:sidebar text link color};}
+
+	#footer p {color:#{arlo color:footer text color};font-family:{arlo font:footer text};}
+	#footer a {color:#{arlo color:footer text link color};}
+
+</style>
+</head>
+<body>
+<div id="menu">
+	<div class="container">
+		<div id="name">
+			<h1>{{ site | masthead_image_or_title_link }}</h1>
+		</div><!-- end name -->
+		<div id="nav">
+			{{ site | build_menu: 'true', 'true' }}
+		</div><!-- end nav -->
+		<div id="footer">
+				{{ site | convert_liquid_and_textilize: site.footer_copy }}
+	            {{ site | arlo_credit }}
+		</div><!-- end footer -->
+	</div>	
+</div>	
+<div id="horizontal-container">
+{% if ((section != 'portfolios') && (action != 'show')) %}
+<div id="contents">
+	<div id="contents-container">
+{% endif %}
+		{% if section == 'notes' %}
+			<div id="notes-wrap">
+			{% if action == 'show' %}
+			<div id="main">
+				<div class="note-wrap">
+					<h2 class="indented">{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">{{ note | link_for_finding }}</span>{% endif %}</h2>
+					<div class="content-main">
+						{% if note.stills != empty %}
+						<div class="note-stills-wrap">
+							{% for still in note.stills %}
+							<div class="note-still-unit">
+								{{ still | to_image_tag: 'four_thirty' }}
+								<p>{{ still.name }}</p>
+							</div><!-- end note-still-unit -->
+							{% endfor %}
+							<div class="arlo-clear"></div>
+						</div><!-- end note-stills-wrap -->
+						{% endif %}
+						{{ site | convert_liquid_and_textilize: note.body }}
+						<p class="metadata">{{ note | link_for: "Permalink" }} | {{ note | link_for_note_type }}</p>
+					</div><!-- end content-main -->
+					<div class="content-sidebar"><p>{{ note.created_at | friendly_time_difference }}<br />{{ note.user.login }}</p></div>
+					<div class="arlo-clear"></div>
+				</div><!-- end note-wrap -->
+			</div><!-- end main -->
+			<div id="sidebar">
+				{{ site | convert_liquid_and_textilize:site.notes_copy }}{{ note | next_note }}{{ note | previous_note }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}
+			</div><!-- end sidebar -->
+			
+		{% elsif action == 'type' %}
+			<!-- <h2>{{ notes.first.note_type_label | to_plural }}</h2> -->
+			<div id="main">
+				{% for note in notes %}
+						<div class="note-wrap">
+							<h2 class="indented">{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">{{ note | link_for_finding }}</span>{% endif %}</h2>
+							<div class="content-main">
+								{% if note.stills != empty %}
+								<div class="note-stills-wrap">
+									{% for still in note.stills %}
+									<div class="note-still-unit">
+										{{ still | to_image_tag: 'four_thirty' }}
+										<p>{{ still.name }}</p>
+									</div><!-- end note-still-unit -->
+									{% endfor %}
+									<div class="arlo-clear"></div>
+								</div><!-- end note-stills-wrap -->
+								{% endif %}
+								{{ site | convert_liquid_and_textilize: note.body }}
+								<p class="metadata">{{ note | link_for: "Permalink" }} | {{ note | link_for_note_type }}</p>
+							</div><!-- end content-main -->
+							<div class="content-sidebar"><p>{{ note.created_at | friendly_time_difference }}<br />{{ note.user.login }}</p></div>
+							<div class="arlo-clear"></div>
+						</div><!-- end note-wrap -->
+				{% endfor %}
+			</div><!-- end main -->
+			<div id="sidebar">{{ site | convert_liquid_and_textilize: site.notes_copy }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}</div><!-- end sidebar -->
+
+		{% elsif action == 'index' %}
+			<div id="main">
+				{% for note in notes %}
+						<div class="note-wrap">
+							<h2 class="indented">{{ note | link_for: note.name }} {% if note.is_finding %}<span class="finding-link">{{ note | link_for_finding }}</span>{% endif %}</h2>
+							<div class="content-main">
+								{% if note.stills != empty %}
+								<div class="note-stills-wrap">
+									{% for still in note.stills %}
+									<div class="note-still-unit">
+										{{ still | to_image_tag: 'four_thirty' }}
+										<p>{{ still.name }}</p>
+									</div><!-- end note-still-unit -->
+									{% endfor %}
+									<div class="arlo-clear"></div>
+								</div><!-- end note-stills-wrap -->
+								{% endif %}
+								{{ site | convert_liquid_and_textilize: note.body }}
+								<p class="metadata">{{ note | link_for: "Permalink" }} | {{ note | link_for_note_type }}</p>
+							</div><!-- end content-main -->
+							<div class="content-sidebar"><p>{{ note.created_at | friendly_time_difference }}<br />{{ note.user.login }}</p></div>
+							<div class="arlo-clear"></div>
+						</div><!-- end note-wrap -->
+				{% endfor %}
+			</div><!-- end main -->
+			<div id="sidebar">{{ site | convert_liquid_and_textilize: site.notes_copy }}{{ site | recent_notes }}{{ site | list_note_media_types }}{{ site | link_for_notes_rss_feed }}</div><!-- end sidebar -->
+		{% endif %}
+		</div><!-- end notes-wrap -->
+	{% elsif section == 'pages' %}
+		{% if action == 'show' %}
+		{% if site.public_pages.size > 1 %}<div id="main">{% endif %}
+		
+			<h2>{{ page.name }}</h2>
+			{{ site | convert_liquid_and_textilize: page.body }}
+			{{ site | convert_liquid_and_textilize: page.extended }}
+			
+		{% if site.public_pages.size > 1 %}
+		</div><!-- end main -->
+		<div id="sidebar">
+			<ul>{{ site | pages_section_name }}
+			{% for page in site.public_pages %}
+				<li>{{ page | link_for: page.name }}</li>
+			{% endfor %}
+			</ul>
+        </div><!-- end sidebar -->
+		{% endif %}
+		
+		{% elsif action == 'index' %}
+			<h2>{{ site | pages_section_name }}</h2>
+			{{ site | convert_liquid_and_textilize: site.pages_copy }}
+			{% for page in pages %}
+			<h3>{{ page | link_for: page.name }}</h3>
+			{% endfor %}
+		{% endif %}
+			
+		{% elsif section == 'portfolios' %}
+			{% if action == 'show' %}
+				<div id="portfolio-container">
+					<div id="portfolio-table-wrap">
+						<a id="top" name="top"></a>
+						<!-- DYLAN: I know. I know. -->
+						<table>
+						  <tr>
+							{% if portfolio.body != empty %}
+							<td valign="top">
+								<div id="portfolio-description">
+									<a id="description" name="description"></a>
+									<h2>{{ portfolio.name }}</h2>
+									{{ site | convert_liquid_and_textilize: portfolio.body }}
+								</div>
+							</td>
+							{% endif %}
+							
+							{% for still in portfolio.stills %}	
+						    <td>{{ still | to_image_tag: 'tall_six_hundred' }}<p>{{ still.name }}</p></td>
+							{% endfor %}
+						
+						    <td class="back"><div class="backButton"><a href="#top">Back</a></div></td>
+						  </tr>
+						</table>
+					</div><!-- end portfolio-table-wrap -->
+				</div><!-- end portfolio-container -->
+				
+
+			{% elsif action == 'index' %}	
+				<div id="contents">
+					<div id="contents-container">
+				{% if site.portfolios_copy != blank %}<div id="portfolio-main">{% endif %}
+					<h2>{{ site | portfolio_section_name }}</h2>
+					<div class="portfolio-lightbox-grid">
+						<ul>
+						{% for portfolio in site.public_portfolios %}
+						<li><a href='{{ portfolio | permalink_for }}' title="{{ portfolio.name }}">{{ portfolio.stills.first | to_image_tag: 'medium' }}</a><br />{{ portfolio | link_for: portfolio.name }}</li>
+						{% endfor %}
+							<div class="arlo-clear"></div>
+						</ul>
+					</div><!-- end portfolio-lightbox-grid -->
+				{% if site.portfolios_copy != blank %}
+				</div><!-- end portfolios-main -->
+				<div id="portfolio-sidebar">{{ site | convert_liquid_and_textilize: site.portfolios_copy }}</div><!-- end sidebar -->
+				{% endif %}
+				
+						<div class="arlo-clear"></div>
+					</div><!-- end contents-container -->
+				</div><!-- end contents -->
+					
+			{% endif %}
+		{% elsif section == 'tags' %}
+		
+		{% elsif section == 'resume_sections' %}
+		<div id="resume-main">
+			<div id="resume-pdf-link">
+				<a href="{{ site | resume_pdf_url }}">Download as PDF</a>
+			</div>
+			<h2 class="indented">{{ site | resume_section_name }}</h2>
+			{% if site.resume_copy != blank %}<div id="resume-description">{{ site | convert_liquid_and_textilize: site.resume_copy }}</div>{% endif %}
+			
+			{% for resume_section in resume_sections %}
+			<div class="section-row">
+				<h3 class="indented">{{ resume_section.name }}</h3>
+				{% if resume_section.body != blank %}<div class="resume-section-description">{{ resume_section.body | textilize_and_parse_liquid }}</div>{% endif %}
+				{% for resume_item in resume_section.resume_items %}
+					<div class="content-wrap">
+						<div class="resume-item-content">
+							<p><strong>{% if resume_item.website_url == empty %}{{ resume_item.name }}{% else %}{{ resume_item.website_url | link_to_url: resume_item.name }}{% endif %}</strong></p>
+							{% if resume_item.body != empty %}
+							<p class="description">{{ resume_item.body }}</p>
+							{% endif %}
+						</div><!-- end content-main -->
+						<div class="content-sidebar"><p>{{ resume_item.when }}</p></div>
+						<div class="arlo-clear"></div>
+					</div><!-- end content-wrap -->
+				{% endfor %}
+			</div><!-- end section-row -->
+			{% endfor %}
+		</div><!-- end resume-main -->
+		{% else %}
+		<div id="homepage-large-image"><a href="{{ site.public_portfolios.first | permalink_for }}">{{ site.public_portfolios.first.stills.first | to_image_tag: 'eight_hundred' }}</a></div>
+		{{ site.homepage_copy | textilize_and_parse_liquid }}
+		{% endif %}
+		
+		<div class="arlo-clear"></div>
+{% if ((section != 'portfolios') && (action != 'show')) %}
+	</div><!-- end contents-container -->
+</div><!-- end contents -->
+{% endif %}
+
+</div><!-- horizontal-container -->
+	{{ site | google_analytics_code }}
+	
+<!--
+		Arlo/Artists: Eatock - Horizontal theme v1.00 (Wide, Left-aligned 2-column layout, horizontal sliding gallery, Single-image homepage)
+		Designed by Dylan Fareed (http://dylanfareed.com) ©2009 based on work by Daniel Eatock and Vaska
+
+_____________|\|\|\|\_____________|\|\|\|\|\|\|\|\|\____|\|\____________________|\|\|\|\|\|\|\|\____
+____________|\|\|\|\|\____________|\|\|\|\|\|\|\|\|\|\__|\|\__________________|\|\|\|\|\|\|\|\|\|\__
+___________|\|\____|\|\___________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+__________|\|\______|\|\__________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+_________|\|\________|\|\_________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+________|\|\__________|\|\________|\|\____________|\|\__|\|\__________________|\|\____________|\|\__
+_______|\|\|\|\|\|\|\|\|\|\_______|\|\|\|\|\|\|\|\|\|\__|\|\__________________|\|\____________|\|\__
+______|\|\|\|\|\|\|\|\|\|\|\______|\|\|\|\|\|\|\|\|\____|\|\__________________|\|\____________|\|\__
+_____|\|\________________|\|\_____|\|\________|\|\______|\|\__________________|\|\____________|\|\__
+____|\|\__________________|\|\____|\|\_________|\|\_____|\|\__________________|\|\____________|\|\__
+___|\|\____________________|\|\___|\|\__________|\|\____|\|\|\|\|\|\|\|\|\|\__|\|\|\|\|\|\|\|\|\|\__
+__|\|\______________________|\|\__|\|\___________|\|\___|\|\|\|\|\|\|\|\|\|\____|\|\|\|\|\|\|\|\____
+
+-->
+
+</body>
+</html>

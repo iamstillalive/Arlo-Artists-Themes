@@ -1,0 +1,168 @@
+html, body {margin: 0;padding: 0; }
+
+
+#menu {
+	position:fixed;
+	_position:absolute;
+	top:0;
+	left:0;
+  	_left:expression(eval(document.body.scrollLeft));
+	margin:0;
+	padding:0;
+	z-index: 10;
+	outline: none;
+	height:100%;
+	width: 200px;
+ }
+
+#horizontal-container { 
+	position:absolute;left:0px;top:0px;z-index:1; vertical-align: top;
+}
+
+.container {padding:20px;}
+#contents {margin: 20px 0 0 220px;padding:0;}
+#contents #contents-container {width:800px;margin:0 0 20px 0;}
+.arlo-clear {clear:both;margin:0;padding:0;}
+
+/* name */
+#name {margin:0;}
+#name a {text-decoration:none;}
+#name a:hover {text-decoration:underline;}
+#name a.active {}
+#name h1 {line-height:20px;font-size:20px;padding: 0;margin:0 0 0 0;font-weight:bold;}
+#name h1 a {text-decoration:none;}
+#name h1 a:hover {text-decoration:underline;}
+
+/* nav */
+#nav li a {text-decoration:none;}
+#nav li a:hover {text-decoration:underline;}
+#nav ul {clear:both;padding:20px 0;}
+#nav li {font-size:13px;line-height:20px;padding:0;}
+#nav li a {}
+#nav li a {text-decoration:none;}
+#nav li a:hover {text-decoration:underline;}
+
+
+/* bd */
+#contents h2 a {text-decoration:none;}
+#contents h2 a:hover {text-decoration:underline;}
+
+#contents .content-main a {text-decoration:underline;}
+#contents .content-main a:hover {text-decoration:none;}
+
+#sidebar {float:right;width:150px;padding:0 0 0 0;min-height:100px;}
+#sidebar p {margin:0 0 20px 0;font-size:11px;line-height:20px;}
+#sidebar a {text-decoration:underline;}
+#sidebar a:hover {text-decoration:none;}
+
+#main {float:left;width:600px;padding:0 0 0 0;min-height:100px;}
+.section-row {margin:0 0 40px 0;}
+
+#contents h2 {font-size:20px;line-height:20px;font-weight:bold;margin:0 0 20px 0;}
+#contents h2 a {text-decoration:none;}
+#contents h2 a:hover {text-decoration:underline;}
+#contents h3 {font-size:16px;line-height:20px;font-weight:bold;margin:0 0 0 0;}
+#contents h3 a {text-decoration:none;}
+#contents h3 a:hover {text-decoration:underline;}
+#contents h2.indented {margin:0 0 20px 100px;}
+#contents h3.indented {margin:0 0 20px 100px;font-weight:bold;font-size:16px;line-height:20px;}
+#contents h2.indented span.finding-link {font-size:12px;margin:0 0 0 10px;padding:0 0 0 16px;}
+#contents p {font-size:13px;line-height:20px;margin:0 0 20px 0;}
+
+#contents .content-sidebar {float:left;width:80px;}
+#contents .content-main {float:right;width:500px;}
+#contents #content .content-main p,
+#contents #content p {margin:0 0 18px 0;font-size:14px;line-height:20px;}
+#contents #content .content-sidebar p {margin:0 0 20px 0;font-size:11px;line-height:20px;text-align:right;}
+#contents .note-wrap {margin:0 0 40px 0;}
+
+#contents p strong {font-weight:bold;}
+#contents p a {text-decoration:underline;}
+#contents p a:hover {text-decoration:none;}
+
+#contents p.metadata {margin:-10px 0 20px 0;font-size:11px;line-height:20px;}
+#contents p.metadata a {text-decoration:none;}
+#contents p.metadata a:hover {text-decoration:underline;}
+
+#contents .content-main h2 {font-weight:bold;font-style:normal;font-size:20px;line-height:20px;margin:0 0 40px 0;}
+#contents .content-main h2 a {}
+#contents .content-main h2 a:hover {}
+#contents .content-main blockquote {margin:0 0 20px 0;padding:0 0 0 20px;}
+#contents .content-main h3 {font-style:normal;font-weight:bold;font-size:18px;line-height:20px;margin:18px 0;}
+#contents .content-main h3 em {font-style:oblique;font-weight:normal;font-size:12px;line-height:20px;}
+#contents .content-main h3 em a {padding:4px;}
+#contents .content-main h4 {font-weight:bold;font-size:14px;line-height:14px;margin:0 0 0 0;padding:0 0 0 0;}
+#contents .content-main h4 em a {font-weight:normal;font-size:12px;line-height:12px;}
+#contents .content-main h4 em a:hover {font-weight:normal;font-size:12px;line-height:12px;}
+#contents .content-main h2 a,
+#contents .content-main h3 a {text-decoration:none;}
+#contents .content-main h2 a:hover,
+#contents .content-main h3 a:hover {text-decoration:underline;}
+#contents #portfolio-main p a,
+#contents #portfolio-main li a,
+#contents .content-main p a {text-decoration:underline;}
+#contents #portfolio-main p a:hover,
+#contents #portfolio-main li a:hover,
+#contents .content-main p a:hover {text-decoration:none;}
+
+#contents .content-main ul {margin:0 0 20px 0;font-size:14px;line-height:20px;font-weight:bold;}
+#contents .content-main li {font-size:;font-size:14px;line-height:20px;margin:0 0 0 20px;list-style-type:circle;font-weight:normal;}
+
+#contents .note-unit {margin:0 0 36px 0;padding:0 0 36px 0;}
+
+#contents #sidebar ul {margin:0 0 20px 0;font-size:12px;line-height:20px;font-weight:bold;}
+#contents #sidebar li {font-size:11px;line-height:20px;margin:0 0 0 20px;list-style-type:circle;font-weight:normal;}
+#contents #sidebar p.notes-rss {font-size:11px;line-height:20px;margin:0 0 0 0;list-style-type:circle;font-weight:normal;}
+#contents #sidebar p.notes-rss a {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+#contents #sidebar p.notes-rss a:hover {padding:0 0 0 18px;background: transparent url(http://assets.arlosites.com/shared/images/feedicons/04.png) no-repeat 0 0;}
+
+#contents #notes-wrap {padding:0 0 0 0;}
+
+/* ft */
+#footer {padding:20px 0;}
+#footer p {line-height:20px;font-size:11px;}
+#footer a {text-decoration:underline;}
+#footer a:hover {text-decoration:none;}
+#footer a.active {}
+
+html, body {text-align:left;}
+.arlo-clear {clear:both;margin:0;padding:0;}
+
+/* content */
+
+.note-unit { }
+.portfolio-unit {float:left;width:230px;height:230px;overflow:hidden;}
+#contents .content-sidebar ul {font-weight:bold;margin:0 0 20px 0;font-size:11px;line-height:16px;}
+#contents .content-sidebar li {font-weight:normal;border-bottom:1px solid #ccc;}
+#contents .content-sidebar li a {display:block;padding:4px;text-decoration:none;}
+#contents .content-sidebar li a:hover {text-decoration:underline;}
+#contents .content-sidebar p {text-align:right;font-size:11px;}
+
+/* resume */
+.resume-items-wrap {margin:-9px 0 36px 0;}
+.resume-item-unit {margin:10px 0;padding:10px 0;}
+.resume-item-date {width:80px;float:left;text-align:right;font-size:11px;line-height:18px;}
+.resume-item-content {width:700px;float:right;}
+#contents .resume-item-content p, 
+#contents .resume-item-content h4 {margin:0;}
+#contents .resume-item-content h4 {font-size:16px;line-height:18px;}
+#contents .resume-item-content p.description {margin:0px 0 20px 0;font-size:12px;line-height:18px;}
+
+.resume-item-content h4 a {text-decoration:none;}
+.resume-item-content h4 a:hover {text-decoration:underline;}
+#resume-description {padding:0 0 0 100px;margin:-10px 0 40px 0;}
+#contents #resume-pdf-link {float:right;text-align:right;width:300px;height:24px;font-size:12px;line-height:24px;}
+#contents #resume-pdf-link a {padding:0 0 0 16px;font-size:12px;line-height:24px;text-decoration:underline;}
+#contents #resume-pdf-link a:hover {text-decoration:none;}
+
+/* lightbox */
+#contents .portfolio-lightbox-grid ul {}
+#contents .portfolio-lightbox-grid li {float:left;width:200px;margin:0 0 20px 0;}
+#contents .portfolio-lightbox-grid a {text-decoration:underline;}
+#contents .portfolio-lightbox-grid a:hover {text-decoration:none;}
+#contents #portfolio-main {float:left;width:600px;padding:0 0 0 0;min-height:100px;}
+#contents #portfolio-sidebar {float:right;width:190px;padding:40px 0 0 0;min-height:100px;}
+#contents #portfolio-sidebar p {font-size:12px;line-height:18px;}
+
+/* homepage */
+#contents #content #homepage-large-image a img {border:none;}
